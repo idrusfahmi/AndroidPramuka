@@ -41,13 +41,11 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String session = sharedPreferences.getString("username", "empty");
         if(session != "empty"){
-            sharedPreferences.edit().clear().apply();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
         }
         else{
-            //nek mari hapus
-            Toast.makeText(this, "session kosong", Toast.LENGTH_SHORT).show();
+            sharedPreferences.edit().clear().apply();
         }
     }
 

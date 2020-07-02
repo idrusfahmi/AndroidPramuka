@@ -65,8 +65,6 @@ public class ProfilFragment extends Fragment {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         String username = sharedPreferences.getString("username", "empty");
 
-        Toast.makeText(getContext(), "session" + username, Toast.LENGTH_SHORT).show();
-
         Call<String> call = api.postProfilSiswa(username);
         call.enqueue(new Callback<String>() {
             @Override
