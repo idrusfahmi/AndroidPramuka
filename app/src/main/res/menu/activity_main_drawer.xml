@@ -17,6 +17,16 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/profil" />
         <item
+            android:id="@+id/nav_iuran"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Iuran" />
+
+        <item
+            android:id="@+id/nav_sku"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="SKU (Syarat Kecakapan Umum)" />
+
+        <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_exit"
             android:title="@string/logout" />

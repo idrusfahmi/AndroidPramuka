@@ -3,10 +3,12 @@ package com.akagami.absensipramuka.ui.sku;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -63,7 +65,7 @@ public class SkuFragment extends Fragment {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         String username = sharedPreferences.getString("username", "empty");
-
+        Log.i("buwong", username);
         Call<String> call = api.postSkuSiswa(username);
         call.enqueue(new Callback<String>() {
             @Override
@@ -81,7 +83,7 @@ public class SkuFragment extends Fragment {
                             }
                         }
                         else{
-                            Toast.makeText(getContext(), "Kesalahan Sistem", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Kesalahan Sistem ke 2", Toast.LENGTH_SHORT).show();
                         }
 
                     } catch (JSONException e) {
@@ -89,7 +91,7 @@ public class SkuFragment extends Fragment {
                     }
                 }
                 else{
-                    Toast.makeText(getContext(), "Kesalahan Sistem", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Kesalahan Sistem 1", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -106,21 +108,16 @@ public class SkuFragment extends Fragment {
         for (int i = 0; i < data.length(); i++) {
             JSONObject object = data.getJSONObject(i);
 
-            String nomor;
-            if (object.has("nomor")) {
-                nomor = object.getString("nomor");
-            }
-            else{
-                nomor = "-";
-            }
+            String no_sku = object.getString("no_sku");
+            String judul_test = object.getString("judul_test");
 
-            String judul_test;
-            if (object.has("judul_test")) {
-                judul_test = object.getString("judul_test");
-            }
-            else{
-                judul_test = "-";
-            }
+//            String judul_test;
+//            if (object.has("judul_test")) {
+//                judul_test = object.getString("judul_test");
+//            }
+//            else{
+//                judul_test = "-";
+//            }
 
             String hasil;
             if (object.has("hasil")) {
@@ -130,16 +127,16 @@ public class SkuFragment extends Fragment {
                 hasil = "-";
             }
 
-            String penguji;
-            if (object.has("penguji")) {
-                penguji = object.getString("penguji");
+            String nama;
+            if (object.has("id_pengurus")) {
+                nama = object.getString("nama");
             }
             else{
-                penguji = "-";
+                nama = "-";
             }
 
             listSkuData.add(new SkuAdapterItems(
-                    nomor, judul_test, hasil, penguji
+                    no_sku, judul_test, hasil,nama
             ));
         }
 

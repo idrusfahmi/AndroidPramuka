@@ -7,28 +7,54 @@
     >
 
     <TextView
-        android:id="@+id/nomor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nomor"/>
+        android:id="@+id/no_sku"
 
+        android:textAlignment="center"
+        android:layout_width="0dp"
+        android:background="@drawable/border1"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:text="Nomor"
+        android:gravity="center_horizontal" />
+
+<!--    <com.borjabravo.readmoretextview.ReadMoreTextView-->
+<!--        android:id="@+id/judul_test"-->
+<!--        android:background="@drawable/border1"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Judul Test"-->
+<!--        app:trimExpandedText="Show More"-->
+<!--        app:trimCollapsedText="Show Less"-->
+<!--        app:trimMode="trimModeLength"-->
+<!--        app:trimLength="20"-->
+<!--        />-->
     <TextView
         android:id="@+id/judul_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:background="@drawable/border1"
+        android:layout_weight="0.5"
+        android:layout_height="match_parent"
         android:text="Judul Test"/>
 
 
     <TextView
         android:id="@+id/hasil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hasil"/>
+        android:textAlignment="center"
+        android:layout_width="0dp"
+        android:background="@drawable/border1"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"
+        android:text="Hasil"
+        android:gravity="center_horizontal" />
 
     <TextView
-        android:id="@+id/penguji"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Penguji"/>
+        android:id="@+id/nama"
+        android:textAlignment="center"
+        android:layout_width="0dp"
+        android:background="@drawable/border1"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:text="Penguji"
+        android:gravity="center_horizontal" />
 
 </LinearLayout>

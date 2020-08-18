@@ -21,10 +21,16 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_profil" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_iuran"-->
-<!--        android:name="com.akagami.absensipramuka.ui.iuran.IuranFragment"-->
-<!--        android:label="Iuran"-->
-<!--        tools:layout="@layout/fragment_iuran" />-->
+    <fragment
+        android:id="@+id/nav_iuran"
+        android:name="com.akagami.absensipramuka.ui.iuran.IuranFragment"
+        android:label="Iuran"
+        tools:layout="@layout/fragment_iuran" />
+
+    <fragment
+        android:id="@+id/nav_sku"
+        android:name="com.akagami.absensipramuka.ui.sku.SkuFragment"
+        android:label="SKU (Syarat Kecakapan Umum)"
+        tools:layout="@layout/fragment_sku" />
 
 </navigation>

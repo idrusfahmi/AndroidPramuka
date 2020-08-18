@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.akagami.absensipramuka.ui.absensi.AbsensiFragment;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -100,8 +102,16 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferences.edit().putString("jabatan", jsonObject.getString("jabatan")).apply();
         sharedPreferences.edit().putString("nama", jsonObject.getString("nama")).apply();
         sharedPreferences.edit().putString("avatar", jsonObject.getString("avatar")).apply();
+        if(jsonObject.getString("jabatan").equals("siswa")){
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
+        else{
+            startActivity(new Intent(this, MainActivityAdmin.class));
+            finish();
+        }
 
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
+//        startActivity(new Intent(this, MainActivity.class));
+//        finish();
     }
 }

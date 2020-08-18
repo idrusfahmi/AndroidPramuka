@@ -4,12 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".ui.iuran.IuranFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DATA IURAN"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:gravity="center_horizontal" />
+
+    <RelativeLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="87dp"
+            android:layout_height="35dp"
+            android:text="Bulan"
+            android:background="@drawable/border2"
+            android:textColor="#ffffff"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+        
+        <TextView
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="87dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/border2"
+            android:textAlignment="center"
+            android:text="Minggu \n1"
+            android:gravity="center_horizontal" />
+
+
+        <TextView
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="141dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/border2"
+            android:textAlignment="center"
+            android:text="Minggu \n2"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="196dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/border2"
+            android:textAlignment="center"
+            android:text="Minggu \n3"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="251dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/border2"
+            android:textAlignment="center"
+            android:text="Minggu \n4"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="305dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/border2"
+            android:textAlignment="center"
+            android:text="Minggu \n5"
+            android:gravity="center_horizontal" />
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/lv_iuran"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
         android:scrollbars="none"
         android:clipToPadding="false"
         android:background="#ffffff"/>

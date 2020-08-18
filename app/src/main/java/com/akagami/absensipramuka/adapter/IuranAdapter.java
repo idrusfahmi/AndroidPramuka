@@ -45,23 +45,23 @@ public class IuranAdapter extends BaseAdapter {
             convertView = layoutInflater.inflate(R.layout.list_view_iuran_siswa, parent, false);
             final IuranAdapterItems items = listIuranAdapter.get(position);
 
-            TextView bulan = convertView.findViewById(R.id.absensi_bulan);
+            TextView bulan = convertView.findViewById(R.id.bulan);
             bulan.setText(items.getBulan());
 
-            TextView absensi_1 = convertView.findViewById(R.id.absensi_1);
-            absensi_1.setText(items.getMinggu_1());
+            TextView iuran_minggu1 = convertView.findViewById(R.id.iuran_minggu1);
+            iuran_minggu1.setText(items.getIuran_minggu1());
 
-            TextView absensi_2 = convertView.findViewById(R.id.absensi_2);
-            absensi_2.setText(items.getMinggu_2());
+            TextView iuran_minggu2 = convertView.findViewById(R.id.iuran_minggu2);
+            iuran_minggu2.setText(items.getIuran_minggu2());
 
-            TextView absensi_3 = convertView.findViewById(R.id.absensi_3);
-            absensi_3.setText(items.getMinggu_3());
+            TextView iuran_minggu3 = convertView.findViewById(R.id.iuran_minggu3);
+            iuran_minggu3.setText(items.getIuran_minggu3());
 
-            TextView absensi_4 = convertView.findViewById(R.id.absensi_4);
-            absensi_4.setText(items.getMinggu_4());
+            TextView iuran_minggu4 = convertView.findViewById(R.id.iuran_minggu4);
+            iuran_minggu4.setText(items.getIuran_minggu4());
 
-            TextView absensi_5 = convertView.findViewById(R.id.absensi_5);
-            absensi_5.setText(items.getMinggu_5());
+            TextView iuran_minggu5 = convertView.findViewById(R.id.iuran_minggu5);
+            iuran_minggu5.setText(items.getIuran_minggu5());
 
             Log.i("fahmi", "aaa");
         }

@@ -3,6 +3,7 @@ package com.akagami.absensipramuka.ui.iuran;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,7 +64,7 @@ public class IuranFragment extends Fragment {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         String username = sharedPreferences.getString("username", "empty");
-
+        Log.i("buwong", username);
         Call<String> call = api.postIuranSiswa(username);
         call.enqueue(new Callback<String>() {
             @Override
@@ -81,7 +82,7 @@ public class IuranFragment extends Fragment {
                             }
                         }
                         else{
-                            Toast.makeText(getContext(), "Kesalahan Sistem", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Kesalahan Sistem ke 2", Toast.LENGTH_SHORT).show();
                         }
 
                     } catch (JSONException e) {
@@ -89,7 +90,7 @@ public class IuranFragment extends Fragment {
                     }
                 }
                 else{
-                    Toast.makeText(getContext(), "Kesalahan Sistem", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Kesalahan Sistem 1", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -107,49 +108,48 @@ public class IuranFragment extends Fragment {
             JSONObject object = data.getJSONObject(i);
 
             String bulan = object.getString("bulan");
-
-            String mg1;
+            String iuran_minggu1;
             if (object.has("minggu_1")) {
-                mg1 = object.getString("minggu_1");
+                iuran_minggu1 = object.getString("minggu_1");
             }
             else{
-                mg1 = "-";
+                iuran_minggu1 = "-";
             }
 
-            String mg2;
+            String iuran_minggu2;
             if (object.has("minggu_2")) {
-                mg2 = object.getString("minggu_2");
+                iuran_minggu2 = object.getString("minggu_2");
             }
             else{
-                mg2 = "-";
+                iuran_minggu2 = "-";
             }
 
-            String mg3;
+            String iuran_minggu3;
             if (object.has("minggu_3")) {
-                mg3 = object.getString("minggu_3");
+                iuran_minggu3 = object.getString("minggu_3");
             }
             else{
-                mg3 = "-";
+                iuran_minggu3 = "-";
             }
 
-            String mg4;
+            String iuran_minggu4;
             if (object.has("minggu_4")) {
-                mg4 = object.getString("minggu_4");
+                iuran_minggu4 = object.getString("minggu_4");
             }
             else{
-                mg4 = "-";
+                iuran_minggu4 = "-";
             }
 
-            String mg5;
+            String iuran_minggu5;
             if (object.has("minggu_5")) {
-                mg5 = object.getString("minggu_5");
+                iuran_minggu5 = object.getString("minggu_5");
             }
             else{
-                mg5 = "-";
+                iuran_minggu5 = "-";
             }
 
             listIuranData.add(new IuranAdapterItems(
-                    bulan, mg1, mg2, mg3, mg4, mg5
+                    bulan, iuran_minggu1, iuran_minggu2, iuran_minggu3, iuran_minggu4, iuran_minggu5
             ));
         }
 
@@ -157,5 +157,3 @@ public class IuranFragment extends Fragment {
         listView.setAdapter(iuranAdapter);
     }
 }
-
-

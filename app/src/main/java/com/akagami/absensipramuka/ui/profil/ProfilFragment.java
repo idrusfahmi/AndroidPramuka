@@ -22,6 +22,7 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -105,7 +106,7 @@ public class ProfilFragment extends Fragment {
     private void tampilProfil(JSONObject jsonObject) throws JSONException{
         JSONObject data = jsonObject.getJSONObject("data");
 
-        ImageView avatar = view.findViewById(R.id.profil_avatar);
+       ImageView avatar = view.findViewById(R.id.profil_avatar);
         Picasso.get().load(data.getString("avatar")).into(avatar);
 
         TextView nama = view.findViewById(R.id.profil_nama);
